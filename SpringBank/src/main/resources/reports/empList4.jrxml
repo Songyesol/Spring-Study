@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 7.2.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="empList4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="654fcd5d-14d5-4850-ad3a-e380b0cc00d8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="hr"/>
+	<style name="label_style" backcolor="#B5E080" hTextAlign="Left" fontSize="13" isBold="true">
+		<paragraph leftIndent="10"/>
+	</style>
+	<style name="content_style" fontSize="14" isBold="true"/>
+	<queryString language="SQL">
+		<![CDATA[select e.*, d.department_name
+	from employees e, departments d
+	where e.department_id=d.department_id
+	order by e.employee_id]]>
+	</queryString>
+	<field name="EMPLOYEE_ID" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="EMPLOYEE_ID"/>
+	</field>
+	<field name="FIRST_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FIRST_NAME"/>
+	</field>
+	<field name="LAST_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="LAST_NAME"/>
+	</field>
+	<field name="EMAIL" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="EMAIL"/>
+	</field>
+	<field name="PHONE_NUMBER" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PHONE_NUMBER"/>
+	</field>
+	<field name="HIRE_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="HIRE_DATE"/>
+	</field>
+	<field name="JOB_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="JOB_ID"/>
+	</field>
+	<field name="SALARY" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="SALARY"/>
+	</field>
+	<field name="COMMISSION_PCT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="COMMISSION_PCT"/>
+	</field>
+	<field name="MANAGER_ID" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="MANAGER_ID"/>
+	</field>
+	<field name="DEPARTMENT_ID" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="DEPARTMENT_ID"/>
+	</field>
+	<field name="DEPARTMENT_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DEPARTMENT_NAME"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="609" splitType="Stretch">
+			<textField>
+				<reportElement style="content_style" x="21" y="60" width="99" height="30" uuid="0cfd3055-dc84-4803-98bd-d6f09666e981"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{EMPLOYEE_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="120" y="60" width="410" height="30" uuid="a0f8c4d9-7edf-4511-b1cc-8e7ce0fcc6c6"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{FIRST_NAME}.concat(" ").concat( $F{LAST_NAME} )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="120" y="90" width="410" height="30" uuid="5f10a3f3-d18d-4a8c-a48c-450a723370a2"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="120" y="120" width="410" height="30" uuid="274dc0fd-084c-4f22-9a61-12666e4aa7b5"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{PHONE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="120" y="150" width="410" height="30" uuid="aa1e564f-2e97-4bbe-9ed7-d3ed36a2962e"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{HIRE_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="120" y="180" width="150" height="30" uuid="d0b4124a-aac2-4055-a839-ae791a2aacc6"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{JOB_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="120" y="210" width="150" height="30" uuid="f9118598-3617-4eb6-ac03-d7b57ad81667"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{SALARY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="369" y="180" width="161" height="30" uuid="fe9fd37d-58d9-42ac-8df0-0cc9977891c6"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{COMMISSION_PCT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="369" y="210" width="161" height="30" uuid="28171786-ac80-4351-83a0-0321652a9fbb"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{MANAGER_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="120" y="240" width="150" height="30" uuid="21b4f693-04a7-416a-8984-170e78ef4468"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{DEPARTMENT_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="369" y="240" width="161" height="30" uuid="437e84f9-5ea9-48df-b9ae-8d620ebb4123"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{DEPARTMENT_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="label_style" x="21" y="90" width="99" height="30" uuid="1fd1e185-9602-410e-8753-be58aa06bcb8"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="21" y="120" width="99" height="30" isRemoveLineWhenBlank="true" uuid="d9497e84-4b9a-41ce-a3ff-2e1596b0f0d1"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Phone Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="21" y="150" width="99" height="30" uuid="e602f277-f423-4b9d-8867-a48b3fe27d30"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Hire Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="21" y="180" width="99" height="30" uuid="531e83be-b451-4239-ab46-2b43dbdb754c"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Job Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="21" y="240" width="99" height="30" uuid="61cadce5-d0d7-4d47-92a2-6dfabb9438b8"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Dept Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="21" y="210" width="99" height="30" uuid="95f7e75d-6661-4c2a-ae29-662c2a487ad6"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Salary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="270" y="180" width="99" height="30" uuid="538aeb0b-1deb-4c0f-9b91-5a793863c000"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Commission]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="270" y="210" width="99" height="30" uuid="8b35bd26-4183-4cc2-95c8-e7332b170f96"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Manager Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="270" y="240" width="99" height="30" uuid="5c24eb9d-5263-4218-bdd6-026c605b4182"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Dept Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="content_style" x="22" y="310" width="99" height="30" uuid="d915d4b3-645e-4fe2-a880-608442a15225"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{EMPLOYEE_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="121" y="310" width="410" height="30" uuid="920cf566-cf7c-426f-8561-e85f2f1e2c10"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{FIRST_NAME}.concat(" ").concat( $F{LAST_NAME} )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="121" y="340" width="410" height="30" uuid="1078c8c9-f957-4e60-823c-2c27028a64a0"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="121" y="370" width="410" height="30" uuid="620ab3ec-4fb5-49bb-b548-af65e3be1454"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{PHONE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="121" y="400" width="410" height="30" uuid="b1ed4920-abc3-4a67-beb5-3a33aac78774"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{HIRE_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="121" y="430" width="150" height="30" uuid="b3046b0e-9a96-4722-bd89-c2b1c8b3499e"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{JOB_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="121" y="460" width="150" height="30" uuid="01662cae-3f73-4bc1-8a99-d8a4fcf4309a"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{SALARY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="370" y="430" width="161" height="30" uuid="c59e08e9-7cbe-4df8-8ed4-b76d5a208dee"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{COMMISSION_PCT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="370" y="460" width="161" height="30" uuid="6c29a793-a9de-4a4b-9bd3-fa37ce1a73d2"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{MANAGER_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="121" y="490" width="150" height="30" uuid="f37b7c21-ed52-4ace-bd71-3ed9d100293c"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{DEPARTMENT_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="content_style" x="370" y="490" width="161" height="30" uuid="f215c9ac-fa3e-4d4d-a218-766f578a5554"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{DEPARTMENT_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="label_style" x="22" y="340" width="99" height="30" uuid="b33baf3d-ed95-4db8-91a7-790e75c71433"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="22" y="370" width="99" height="30" isRemoveLineWhenBlank="true" uuid="9b0c7803-2d85-497e-ac28-b1909fa3938b"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Phone Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="22" y="400" width="99" height="30" uuid="def260f1-89cb-4903-8864-2760140599e2"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Hire Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="22" y="430" width="99" height="30" uuid="f323517e-f8b1-4238-beb4-849800832d34"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Job Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="22" y="490" width="99" height="30" uuid="a069391d-ec37-4173-b81e-b903aec207f3"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Dept Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="22" y="460" width="99" height="30" uuid="f43a4051-cad7-4c59-9245-b2d88d435803"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Salary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="271" y="430" width="99" height="30" uuid="182e1485-dd2c-4baa-b9bd-e50f7afdc70d"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Commission]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="271" y="460" width="99" height="30" uuid="edd6ddb6-fcea-4288-a1f0-4aeebbdd6879"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Manager Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="label_style" x="271" y="490" width="99" height="30" uuid="64ba982b-ec5a-47ec-b5f1-092e09f1c86d"/>
+				<box>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Dept Name]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
