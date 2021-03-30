@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.temp.service.impl.EmpMapper">
+	<select id="getEmpList" resultType="map"> 
+		SELECT first_name "firstName", <!-- map의 키값을 바꿔주고 싶으면 ""안에 alias를 넣어주면 됍니다. -->
+			   last_name "lastName",
+			   salary "salary",
+			   email "email"
+		FROM EMPLOYEES
+	</select>
+	
+	<!-- 일별 합계 판매액 -->
+	<!-- resultType에 따라서 return 값이 달라짐 -->
+	<!-- map은 넣은 타입 그대로 들어가고 오라클에서 보이는 column명 그대로 대문자로 들어가기 때문에 
+		 원한다면 ""안에 alias 를 넣어주면 된다. -->
+	<select id="getDailySaleList" resultType="map" >
+		select to_char(sale_date,'yyyy/mm/dd') "sale_date" ,sum(sale_price) "sum_price"
+		from sale_tbl_10 
+		group by SALE_DATE
+		order by 1	
+	</select>
+	
+	<select id="getMonthSaleList" resultType="map" >
+		select to_char(sale_date,'yyyy-mm') salesdate ,sum(sale_price) sale_price
+		from sale_tbl_10 
+		group by to_char(SALE_DATE,'yyyy-mm')
+		order by 1	
+	</select>
+	
+		<select id="getAnnualSaleList" resultType="map" >
+		select to_char(sale_date,'yyyy') salesdate ,sum(sale_price) sale_price
+		from sale_tbl_10 
+		group by to_char(SALE_DATE,'yyyy')
+		order by 1	
+	</select>
+	
+</mapper>
